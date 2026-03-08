@@ -1,0 +1,26 @@
+<form id="loginForm">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+        const response = await fetch("http://localhost:8000/signin", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value
+            })
+        });
+        const data = await response.json();
+        console.log(data);
+        alert(data.message || data.detail || JSON.stringify(data));
+    } catch (error) {
+        alert("Error: " + error);
+    }
+});
+</script>
