@@ -1,6 +1,6 @@
-# fastapi-sentiment-separated
+# fastapi-sentiment
 
-The same sentiment analysis app, but with **frontend and backend fully separated** — the industry-standard pattern. The backend serves a JSON API, and the frontend is a standalone HTML/JS app that calls it using `fetch()`.
+A sentiment analysis API using HuggingFace Transformers, with **frontend and backend fully separated** — the industry-standard pattern. The backend serves a JSON API, and the frontend is a standalone HTML/JS app that calls it using `fetch()`.
 
 ## Project Structure
 
@@ -35,9 +35,9 @@ Frontend (localhost:3000)             Backend (localhost:8000)
 └────────────────────────┘            └─────────────────────────────┘
 ```
 
-## Compared to fastapi-sentiment (templates version)
+## Compared to fastapi-templates
 
-| Feature               | fastapi-sentiment (templates)  | fastapi-sentiment-separated    |
+| Feature               | fastapi-templates (Jinja2)     | fastapi-sentiment (this)       |
 |-----------------------|-------------------------------|-------------------------------|
 | Frontend              | Jinja2 templates              | Separate HTML + JavaScript    |
 | Servers               | 1 (port 8000)                 | 2 (port 8000 + 3000)         |
@@ -47,6 +47,8 @@ Frontend (localhost:3000)             Backend (localhost:8000)
 | Real-world pattern?   | Quick prototypes              | Production applications       |
 
 ## Setup
+
+> **No GPU required.** This app runs on CPU using HuggingFace Transformers. The model (~260MB) is downloaded automatically on first run and cached in `~/.cache/huggingface/`. If you need GPU-accelerated inference, see `sentiment_app_vllm` instead.
 
 ```bash
 pip install fastapi uvicorn transformers torch
@@ -162,7 +164,7 @@ curl -X POST http://localhost:8000/analyze \
 - **Pydantic model** — `TextRequest` validates that the request contains a `text` field
 - **Model loaded at startup** — `sentiment_model = pipeline(...)` runs once when the server starts, not on every request
 - **"Analyzing..." feedback** — The frontend shows a loading message while waiting for the model to respond
-- **No templates needed** — No Jinja2, no `templates/` folder. The backend is purely a JSON API
+- **No templates needed for the API** — The backend is purely a JSON API. The `server/templates/` folder contains a Jinja2-based variant (not used by the current `main.py`)
 
 ## Why Separate?
 
@@ -191,5 +193,5 @@ This pattern lets you:
 | 4  | fastapi-login-demo               | Frontend-backend separation             | No  | 2       |
 | 5  | fastapi-routers                  | Organizing a growing backend            | No  | 1       |
 | 6  | fastapi-crud                     | Full CRUD with all HTTP methods         | No  | 2       |
-| 7  | fastapi-sentiment                | Serving an AI model (templates)         | Yes | 1       |
-| 8  | **fastapi-sentiment-separated** ← | AI model with separated frontend       | Yes | 2       |
+| 7  | fastapi-templates                | HTML in separate files (Jinja2)         | No  | 1       |
+| 8  | **fastapi-sentiment** ←          | AI model with separated frontend        | Yes | 2       |

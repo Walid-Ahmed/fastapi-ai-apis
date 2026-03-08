@@ -8,10 +8,11 @@ Sentiment analysis powered by a **vLLM model server** running Falcon-RW-1B, with
 sentiment_app_vllm/
 ├── server/
 │   ├── main.py            ← Backend — JSON API, calls vLLM
-│   └── start_server.sh    ← Start the FastAPI backend
+│   └── start_server.sh    ← Start the FastAPI backend (port 8000)
 ├── client/
 │   ├── index.html         ← Frontend — separate UI
-│   └── start_client.sh    ← Serve the frontend
+│   └── start_client.sh    ← Serve the frontend (port 3000)
+├── start_vllm.sh          ← Start the vLLM model server (port 8010)
 └── README.md
 ```
 
@@ -31,13 +32,15 @@ Frontend (port 3000)          FastAPI (port 8000)           vLLM (port 8010)
 └──────────────────┘          └──────────────────┘          └──────────────────┘
 ```
 
-| Server | Port | Role | What it does |
-|--------|------|------|-------------|
-| vLLM | 8010 | Model server | Runs the LLM on GPU |
-| FastAPI (Uvicorn) | 8000 | API backend | Prompt engineering, parsing, returns JSON |
-| Python HTTP Server | 3000 | Frontend | Serves static HTML/JS files |
+| Server | Port | Script | Role |
+|--------|------|--------|------|
+| vLLM | 8010 | `start_vllm.sh` | Runs the LLM on GPU |
+| FastAPI (Uvicorn) | 8000 | `server/start_server.sh` | Prompt engineering, parsing, returns JSON |
+| Python HTTP Server | 3000 | `client/start_client.sh` | Serves static HTML/JS files |
 
 ## Setup
+
+> **GPU required.** vLLM needs an NVIDIA CUDA-capable GPU to run the model. Check yours with `nvidia-smi`. If you don't have a GPU, use `fastapi-sentiment` instead — it runs the same sentiment task on CPU.
 
 ```bash
 pip install fastapi uvicorn requests
@@ -60,7 +63,8 @@ pip install vllm
 ### Step 2: Download and start the model
 
 ```bash
-python -m vllm.entrypoints.api_server --model tiiuae/falcon-rw-1b --port 8010
+cd sentiment_app_vllm
+bash start_vllm.sh
 ```
 
 The first time you run this, vLLM will **automatically download** the model from Hugging Face (~2.6GB for Falcon-RW-1B). This only happens once — the model is cached in `~/.cache/huggingface/` for future runs.
@@ -89,7 +93,7 @@ You should get a JSON response with generated text.
 
 ### Using a different model
 
-Just change the `--model` flag:
+Edit the `--model` flag in `start_vllm.sh`, then re-run it:
 
 ```bash
 # Smaller model
@@ -116,16 +120,23 @@ No code changes needed in `main.py` — it just calls the same endpoint regardle
 
 ## Run
 
-```bash
-# Terminal 1 — Start the vLLM model server first
-python -m vllm.entrypoints.api_server --model tiiuae/falcon-rw-1b --port 8010
-# Wait until model is loaded...
+Open **three terminals**:
 
-# Terminal 2 — Start the FastAPI backend
+**Terminal 1 — Start the vLLM model server first:**
+```bash
+cd sentiment_app_vllm
+bash start_vllm.sh
+```
+Wait until you see `Model loaded` before continuing.
+
+**Terminal 2 — Start the FastAPI backend:**
+```bash
 cd sentiment_app_vllm/server
 bash start_server.sh
+```
 
-# Terminal 3 — Start the frontend
+**Terminal 3 — Start the frontend:**
+```bash
 cd sentiment_app_vllm/client
 bash start_client.sh
 ```
@@ -289,4 +300,4 @@ That's the power of separation — swap any layer independently. Want to use Qwe
 | 5  | fastapi-routers                | Organizing a growing backend                  | No        | 1       |
 | 6  | fastapi-crud                   | Full CRUD with all HTTP methods               | No        | 2       |
 | 7  | fastapi-sentiment              | AI model inside FastAPI                       | Yes       | 2       |
-| 8  | **fastapi-vllm-sentiment** ←   | AI model on separate vLLM server              | Yes       | 3       |
+| 8  | **sentiment_app_vllm** ←       | AI model on separate vLLM server              | Yes       | 3       |

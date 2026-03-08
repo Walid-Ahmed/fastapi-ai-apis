@@ -10,7 +10,6 @@ fastapi-routers/
 │   ├── main.py              ← App entry point, includes routers
 │   ├── start.sh             ← Start the server
 │   └── routers/
-│       ├── __init__.py      ← Makes routers a Python package
 │       ├── users.py         ← /users endpoint
 │       └── books.py         ← /books endpoint
 └── README.md
@@ -79,7 +78,8 @@ bash start.sh
 
 - **`APIRouter`** — Works exactly like `FastAPI()` but is designed to be included into a main app. Think of it as a mini-app for a specific feature
 - **`app.include_router()`** — Plugs a router into the main app, registering all its endpoints
-- **`routers/` package** — A folder with an `__init__.py` that groups related endpoint files together
+- **`routers/` folder** — A directory that groups related endpoint files. No `__init__.py` is needed — Python's import system can find modules in subdirectories when uvicorn is launched from the parent directory (`server/`), and the import `from routers import users, books` resolves correctly as long as `routers/` exists at that level
+- **Why no `__init__.py`?** — In modern Python (3.3+), packages do not require an `__init__.py` file. These are called "namespace packages". The import works as long as the directory is on Python's search path, which uvicorn ensures when you run it from the `server/` folder
 
 ## Why Use Routers?
 
