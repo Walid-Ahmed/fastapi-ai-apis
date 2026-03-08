@@ -1,0 +1,114 @@
+<h2>Book Manager</h2>
+
+<!-- Add Book Form -->
+<h3>Add a Book</h3>
+<input type="text" id="title" placeholder="Title">
+<input type="text" id="author" placeholder="Author">
+<button onclick="addBook()">Add Book</button>
+
+<!-- Edit Book Form (hidden by default) -->
+<div id="editSection" style="display:none;">
+    <h3>Edit Book</h3>
+    <input type="hidden" id="editId">
+    <input type="text" id="editTitle" placeholder="Title">
+    <input type="text" id="editAuthor" placeholder="Author">
+    <button onclick="saveEdit()">Save</button>
+    <button onclick="cancelEdit()">Cancel</button>
+</div>
+
+<!-- Book List -->
+<h3>All Books</h3>
+<button onclick="loadBooks()">Refresh List</button>
+<div id="bookList"></div>
+
+<script>
+const API = "http://localhost:8000";
+
+// CREATE — Add a new book (POST)
+async function addBook() {
+    try {
+        const response = await fetch(`${API}/books`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                title: document.getElementById("title").value,
+                author: document.getElementById("author").value
+            })
+        });
+        const data = await response.json();
+        alert(`Added: ${data.title} by ${data.author}`);
+        document.getElementById("title").value = "";
+        document.getElementById("author").value = "";
+        loadBooks();
+    } catch (error) {
+        alert("Error: " + error);
+    }
+}
+
+// READ — List all books (GET)
+async function loadBooks() {
+    try {
+        const response = await fetch(`${API}/books`);
+        const books = await response.json();
+        const list = books.map(b => 
+            `<p>${b.id}. <strong>${b.title}</strong> by ${b.author} 
+             <button onclick="startEdit(${b.id}, '${b.title}', '${b.author}')">Edit</button>
+             <button onclick="deleteBook(${b.id})">Delete</button></p>`
+        ).join("");
+        document.getElementById("bookList").innerHTML = list || "<p>No books found</p>";
+    } catch (error) {
+        document.getElementById("bookList").innerHTML = "Error loading books";
+    }
+}
+
+// UPDATE — Show edit form with current values
+function startEdit(id, title, author) {
+    document.getElementById("editSection").style.display = "block";
+    document.getElementById("editId").value = id;
+    document.getElementById("editTitle").value = title;
+    document.getElementById("editAuthor").value = author;
+}
+
+// UPDATE — Save changes (PUT)
+async function saveEdit() {
+    const id = document.getElementById("editId").value;
+    try {
+        const response = await fetch(`${API}/books/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                title: document.getElementById("editTitle").value,
+                author: document.getElementById("editAuthor").value
+            })
+        });
+        const data = await response.json();
+        alert(`Updated: ${data.title} by ${data.author}`);
+        cancelEdit();
+        loadBooks();
+    } catch (error) {
+        alert("Error: " + error);
+    }
+}
+
+// UPDATE — Hide edit form
+function cancelEdit() {
+    document.getElementById("editSection").style.display = "none";
+}
+
+// DELETE — Remove a book (DELETE)
+async function deleteBook(id) {
+    try {
+        const response = await fetch(`${API}/books/${id}`, {
+            method: "DELETE"
+        });
+        const data = await response.json();
+        alert(data.message);
+        loadBooks();
+    } catch (error) {
+        alert("Error: " + error);
+    }
+}
+
+// Load books on page load (automatic — no button click needed)
+loadBooks();
+</script>

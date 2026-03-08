@@ -18,6 +18,18 @@ Frontend-backend separation with a login form. The frontend (HTML/JS) runs on po
 
 A monolithic FastAPI app that serves multiple HTML pages and handles form submissions from a single file. Covers `HTMLResponse`, `Form()` data, and GET vs POST on the same route.
 
+
+
+### [fastapi-routers](./fastapi-routers)
+
+Splitting a FastAPI app into multiple files using `APIRouter`. Each feature (users, books) gets its own file, and `main.py` wires them together. The standard pattern for organizing real-world FastAPI projects.
+
+
+
+### [fastapi-crud](./fastapi-crud)
+
+A complete CRUD (Create, Read, Update, Delete) API for managing books, with a separate HTML frontend. Covers all four HTTP methods, `fetch()` calls, Pydantic models, path parameters, and error handling.
+
 ## Quick Start
 
 ```bash
