@@ -1,0 +1,15 @@
+name: vllm_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - fastapi
+      - uvicorn
+      - jinja2
+      - requests
+      - vllm
+      - torch
+      - transformers

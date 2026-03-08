@@ -30,11 +30,7 @@ A complete CRUD (Create, Read, Update, Delete) API for managing books, with a se
 
 ### [fastapi-sentiment](./fastapi-sentiment)
 
-Your first AI-powered FastAPI app — a sentiment analysis tool using a Hugging Face model. Type any text and get a positive/negative prediction with confidence score. Uses Jinja2 templates and introduces serving ML models as APIs.
-
-### [fastapi-sentiment-separated](./fastapi-sentiment-separated)
-
-The same sentiment analysis app, but with frontend and backend fully separated. The backend serves a pure JSON API, and the frontend calls it using `fetch()`. The industry-standard pattern for serving AI models.
+An AI-powered sentiment analysis app with frontend and backend fully separated. The backend serves a pure JSON API using a Hugging Face model, and the frontend calls it using `fetch()`. The industry-standard pattern for serving AI models.
 
 ## Learning Path
 
@@ -46,8 +42,7 @@ The same sentiment analysis app, but with frontend and backend fully separated. 
 | 4  | fastapi-login-demo             | Frontend-backend separation (industry pattern)| No        | 2       |
 | 5  | fastapi-routers                | Organizing a growing backend                  | No        | 1       |
 | 6  | fastapi-crud                   | Full CRUD with all HTTP methods               | No        | 2       |
-| 7  | fastapi-sentiment              | Serving an AI model (templates)               | Yes       | 1       |
-| 8  | fastapi-sentiment-separated    | AI model with separated frontend              | Yes       | 2       |
+| 7  | fastapi-sentiment              | Serving an AI model with separated frontend   | Yes       | 2       |
 
 ## Quick Start
 
