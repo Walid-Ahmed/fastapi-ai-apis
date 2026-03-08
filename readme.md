@@ -13,6 +13,11 @@ The simplest FastAPI example — a single GET endpoint with a query parameter. V
 
 Frontend-backend separation with a login form. The frontend (HTML/JS) runs on port 3000 and communicates with the FastAPI backend (port 8000) using `fetch()`. Covers CORS setup, JSON request/response, and running two servers in development.
 
+
+### [fastapi-multipage-app](./fastapi-multipage-app)
+
+A monolithic FastAPI app that serves multiple HTML pages and handles form submissions from a single file. Covers `HTMLResponse`, `Form()` data, and GET vs POST on the same route.
+
 ## Quick Start
 
 ```bash
