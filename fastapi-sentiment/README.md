@@ -5,9 +5,16 @@ The same sentiment analysis app, but with **frontend and backend fully separated
 ## Project Structure
 
 ```
-fastapi-sentiment-separated/
-├── main.py        ← Backend — JSON API + AI model
-├── index.html     ← Frontend — separate UI
+fastapi-sentiment/
+├── server/
+│   ├── main.py              ← Backend — JSON API + AI model
+│   ├── start_server.sh      ← Start the backend server
+│   └── templates/           ← Jinja2 templates (template-based variant)
+│       ├── home.html
+│       └── sentiment.html
+├── client/
+│   ├── index.html           ← Frontend — separate UI
+│   └── start_client.sh      ← Serve the frontend
 └── README.md
 ```
 
@@ -47,25 +54,14 @@ pip install fastapi uvicorn transformers torch
 
 ## Run
 
-Kill any old servers first:
-
 ```bash
-kill -9 $(lsof -t -i :8000)
-kill -9 $(lsof -t -i :3000)
-```
+# Terminal 1 — Backend (API + model)
+cd fastapi-sentiment/server
+bash start_server.sh
 
-Then open **two terminals**:
-
-**Terminal 1 — Backend (API + model):**
-```bash
-cd fastapi-sentiment-separated
-uvicorn main:app --reload
-```
-
-**Terminal 2 — Frontend:**
-```bash
-cd fastapi-sentiment-separated
-python -m http.server 3000
+# Terminal 2 — Frontend
+cd fastapi-sentiment/client
+bash start_client.sh
 ```
 
 Open `http://localhost:3000/index.html` in your browser.

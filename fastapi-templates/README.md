@@ -6,11 +6,13 @@ Using **Jinja2 templates** to separate HTML from Python code. Instead of embeddi
 
 ```
 fastapi-templates/
-├── main.py               ← Backend — routes and logic
-├── templates/
-│   ├── home.html         ← Sign-in form
-│   ├── success.html      ← Welcome page (shows username)
-│   └── error.html        ← Login failed page
+├── server/
+│   ├── main.py               ← Backend — routes and logic
+│   ├── start.sh              ← Start the server
+│   └── templates/
+│       ├── home.html         ← Sign-in form
+│       ├── success.html      ← Welcome page (shows username)
+│       └── error.html        ← Login failed page
 └── README.md
 ```
 
@@ -23,9 +25,8 @@ pip install fastapi uvicorn jinja2 python-multipart
 ## Run
 
 ```bash
-kill -9 $(lsof -t -i :8000)
-cd fastapi-templates
-uvicorn main:app --reload
+cd fastapi-templates/server
+bash start.sh
 ```
 
 Open `http://127.0.0.1:8000` in your browser. Log in with **admin** / **1234**.

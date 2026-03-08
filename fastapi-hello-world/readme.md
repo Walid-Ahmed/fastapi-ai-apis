@@ -6,7 +6,9 @@ The simplest FastAPI example — a single GET endpoint with a query parameter.
 
 ```
 fastapi-hello-world/
-├── main.py       ← Single endpoint API
+├── server/
+│   ├── main.py       ← Single endpoint API
+│   └── start.sh      ← Start the server
 └── README.md
 ```
 
@@ -31,7 +33,8 @@ pip install fastapi uvicorn
 ## Run
 
 ```bash
-uvicorn main:app --reload
+cd fastapi-hello-world/server
+bash start.sh
 ```
 
 ## Try It

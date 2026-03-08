@@ -6,8 +6,12 @@ A complete CRUD (Create, Read, Update, Delete) API for managing books, with a se
 
 ```
 fastapi-crud/
-├── main.py       ← Backend — all CRUD endpoints
-├── index.html    ← Frontend — book manager UI
+├── server/
+│   ├── main.py            ← Backend — all CRUD endpoints
+│   └── start_server.sh    ← Start the backend server
+├── client/
+│   ├── index.html         ← Frontend — book manager UI
+│   └── start_client.sh    ← Serve the frontend
 └── README.md
 ```
 
@@ -19,25 +23,14 @@ pip install fastapi uvicorn
 
 ## Run
 
-Kill any old servers first:
-
 ```bash
-kill -9 $(lsof -t -i :8000)
-kill -9 $(lsof -t -i :3000)
-```
+# Terminal 1 — Backend
+cd fastapi-crud/server
+bash start_server.sh
 
-Then open **two terminals**:
-
-**Terminal 1 — Backend:**
-```bash
-cd fastapi-crud
-uvicorn main:app --reload
-```
-
-**Terminal 2 — Frontend:**
-```bash
-cd fastapi-crud
-python -m http.server 3000
+# Terminal 2 — Frontend
+cd fastapi-crud/client
+bash start_client.sh
 ```
 
 Open `http://localhost:3000/index.html` in your browser.

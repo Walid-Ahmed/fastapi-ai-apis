@@ -6,8 +6,12 @@ A simple project demonstrating how frontend and backend communicate in a real-wo
 
 ```
 fastapi-login-demo/
-├── main.py        ← Backend (FastAPI + Uvicorn)
-├── index.html     ← Frontend (HTML + JavaScript)
+├── server/
+│   ├── main.py            ← Backend (FastAPI + Uvicorn)
+│   └── start_server.sh    ← Start the backend server
+├── client/
+│   ├── index.html         ← Frontend (HTML + JavaScript)
+│   └── start_client.sh    ← Serve the frontend
 └── README.md
 ```
 
@@ -134,36 +138,18 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
 You need **two terminals** open (in PyCharm, click the `+` icon in the Terminal tab).
 
-### Terminal 1 — Start the Backend
-
 ```bash
-cd /path/to/fastapi-login-demo
-uvicorn main:app --reload
+# Terminal 1 — Start the Backend
+cd fastapi-login-demo/server
+bash start_server.sh
+
+# Terminal 2 — Start the Frontend
+cd fastapi-login-demo/client
+bash start_client.sh
 ```
 
-You should see:
+Open `http://localhost:3000/index.html` in your browser.
 
-```
-INFO:     Uvicorn running on http://127.0.0.1:8000
-INFO:     Application startup complete.
-```
-
-### Terminal 2 — Start the Frontend
-
-```bash
-cd /path/to/fastapi-login-demo
-python -m http.server 3000
-```
-
-You should see:
-
-```
-Serving HTTP on :: port 3000 (http://[::]:3000/)
-```
-
-### Open in Browser
-
-- **Login form:** `http://localhost:3000/index.html`
 - **API docs:** `http://localhost:8000/docs`
 - **About endpoint:** `http://localhost:8000/about`
 

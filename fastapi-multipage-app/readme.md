@@ -6,7 +6,9 @@ A FastAPI app that serves multiple HTML pages and handles form submissions — a
 
 ```
 fastapi-multipage-app/
-├── main.py       ← Backend serves HTML pages + handles form POST
+├── server/
+│   ├── main.py       ← Backend serves HTML pages + handles form POST
+│   └── start.sh      ← Start the server
 └── README.md
 ```
 
@@ -60,7 +62,8 @@ pip install fastapi uvicorn
 ## Run
 
 ```bash
-uvicorn main:app --reload
+cd fastapi-multipage-app/server
+bash start.sh
 ```
 
 ## Try It

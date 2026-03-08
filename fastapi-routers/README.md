@@ -6,11 +6,13 @@ Splitting a FastAPI app into multiple files using **APIRouter**. Instead of putt
 
 ```
 fastapi-routers/
-├── main.py              ← App entry point, includes routers
-├── routers/
-│   ├── __init__.py      ← Makes routers a Python package
-│   ├── users.py         ← /users endpoint
-│   └── books.py         ← /books endpoint
+├── server/
+│   ├── main.py              ← App entry point, includes routers
+│   ├── start.sh             ← Start the server
+│   └── routers/
+│       ├── __init__.py      ← Makes routers a Python package
+│       ├── users.py         ← /users endpoint
+│       └── books.py         ← /books endpoint
 └── README.md
 ```
 
@@ -61,7 +63,8 @@ pip install fastapi uvicorn
 ## Run
 
 ```bash
-uvicorn main:app --reload
+cd fastapi-routers/server
+bash start.sh
 ```
 
 ## Try It

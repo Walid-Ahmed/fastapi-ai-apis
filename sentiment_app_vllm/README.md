@@ -5,9 +5,13 @@ Sentiment analysis powered by a **vLLM model server** running Falcon-RW-1B, with
 ## Project Structure
 
 ```
-fastapi-vllm-sentiment/
-├── main.py        ← Backend — JSON API, calls vLLM
-├── index.html     ← Frontend — separate UI
+sentiment_app_vllm/
+├── server/
+│   ├── main.py            ← Backend — JSON API, calls vLLM
+│   └── start_server.sh    ← Start the FastAPI backend
+├── client/
+│   ├── index.html         ← Frontend — separate UI
+│   └── start_client.sh    ← Serve the frontend
 └── README.md
 ```
 
@@ -112,33 +116,18 @@ No code changes needed in `main.py` — it just calls the same endpoint regardle
 
 ## Run
 
-Kill any old servers first:
-
 ```bash
-kill -9 $(lsof -t -i :8000)
-kill -9 $(lsof -t -i :3000)
-kill -9 $(lsof -t -i :8010)
-```
-
-Then open **three terminals**:
-
-**Terminal 1 — Start the vLLM model server:**
-```bash
+# Terminal 1 — Start the vLLM model server first
 python -m vllm.entrypoints.api_server --model tiiuae/falcon-rw-1b --port 8010
-```
+# Wait until model is loaded...
 
-Wait until the model is loaded, then:
+# Terminal 2 — Start the FastAPI backend
+cd sentiment_app_vllm/server
+bash start_server.sh
 
-**Terminal 2 — Start the FastAPI backend:**
-```bash
-cd fastapi-vllm-sentiment
-uvicorn main:app --reload --port 8000
-```
-
-**Terminal 3 — Start the frontend:**
-```bash
-cd fastapi-vllm-sentiment
-python -m http.server 3000
+# Terminal 3 — Start the frontend
+cd sentiment_app_vllm/client
+bash start_client.sh
 ```
 
 Open `http://localhost:3000/index.html` in your browser.
