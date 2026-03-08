@@ -30,7 +30,11 @@ A complete CRUD (Create, Read, Update, Delete) API for managing books, with a se
 
 ### [fastapi-sentiment](./fastapi-sentiment)
 
-An AI-powered sentiment analysis app with frontend and backend fully separated. The backend serves a pure JSON API using a Hugging Face model, and the frontend calls it using `fetch()`. The industry-standard pattern for serving AI models.
+An AI-powered sentiment analysis app with frontend and backend fully separated. The backend serves a pure JSON API using a Hugging Face model, and the frontend calls it using `fetch()`. Your first AI-powered API.
+
+### [fastapi-vllm-sentiment](./fastapi-vllm-sentiment)
+
+Sentiment analysis powered by a separate vLLM model server running Falcon-RW-1B. Three servers working together — frontend, FastAPI backend, and vLLM model server. Covers prompt engineering, output parsing, and the production pattern for serving LLMs.
 
 ## Learning Path
 
@@ -42,7 +46,8 @@ An AI-powered sentiment analysis app with frontend and backend fully separated. 
 | 4  | fastapi-login-demo             | Frontend-backend separation (industry pattern)| No        | 2       |
 | 5  | fastapi-routers                | Organizing a growing backend                  | No        | 1       |
 | 6  | fastapi-crud                   | Full CRUD with all HTTP methods               | No        | 2       |
-| 7  | fastapi-sentiment              | Serving an AI model with separated frontend   | Yes       | 2       |
+| 7  | fastapi-sentiment              | AI model loaded inside FastAPI                | Yes       | 2       |
+| 8  | fastapi-vllm-sentiment         | AI model on separate vLLM server              | Yes       | 3       |
 
 ## Quick Start
 
@@ -57,5 +62,9 @@ Then open `http://127.0.0.1:8000/docs` to explore the API.
 ## For AI Examples
 
 ```bash
+# Example 7 (Hugging Face model inside FastAPI)
 pip install transformers torch
+
+# Example 8 (separate vLLM model server — requires NVIDIA GPU)
+pip install vllm
 ```
