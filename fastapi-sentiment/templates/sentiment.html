@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <h2>Sentiment Analysis</h2>
+    <form action="/sentiment" method="post">
+      <textarea name="text" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
+      <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+      <h3>Result:</h3>
+      <p><b>Text:</b> {{ text }}</p>
+      <p><b>Sentiment:</b> {{ result['label'] }}</p>
+      <p><b>Confidence:</b> {{ '%.2f'|format(result['score'] * 100) }}%</p>
+    {% endif %}
+  </body>
+</html>

@@ -28,16 +28,26 @@ Splitting a FastAPI app into multiple files using `APIRouter`. Each feature (use
 
 A complete CRUD (Create, Read, Update, Delete) API for managing books, with a separate HTML frontend. Covers all four HTTP methods, `fetch()` calls, Pydantic models, path parameters, and error handling.
 
+### [fastapi-sentiment](./fastapi-sentiment)
+
+Your first AI-powered FastAPI app — a sentiment analysis tool using a Hugging Face model. Type any text and get a positive/negative prediction with confidence score. Uses Jinja2 templates and introduces serving ML models as APIs.
+
+### [fastapi-sentiment-separated](./fastapi-sentiment-separated)
+
+The same sentiment analysis app, but with frontend and backend fully separated. The backend serves a pure JSON API, and the frontend calls it using `fetch()`. The industry-standard pattern for serving AI models.
+
 ## Learning Path
 
-| #  | Example                | Key Lesson                                    | Servers |
-|----|------------------------|-----------------------------------------------|---------|
-| 1  | fastapi-hello-world    | Your first endpoint                           | 1       |
-| 2  | fastapi-multipage-app  | Multiple pages, HTML embedded in Python       | 1       |
-| 3  | fastapi-templates      | HTML in separate files (Jinja2)               | 1       |
-| 4  | fastapi-login-demo     | Frontend-backend separation (industry pattern)| 2       |
-| 5  | fastapi-routers        | Organizing a growing backend                  | 1       |
-| 6  | fastapi-crud           | Full CRUD with all HTTP methods               | 2       |
+| #  | Example                        | Key Lesson                                    | AI Model? | Servers |
+|----|--------------------------------|-----------------------------------------------|-----------|---------|
+| 1  | fastapi-hello-world            | Your first endpoint                           | No        | 1       |
+| 2  | fastapi-multipage-app          | Multiple pages, HTML embedded in Python       | No        | 1       |
+| 3  | fastapi-templates              | HTML in separate files (Jinja2)               | No        | 1       |
+| 4  | fastapi-login-demo             | Frontend-backend separation (industry pattern)| No        | 2       |
+| 5  | fastapi-routers                | Organizing a growing backend                  | No        | 1       |
+| 6  | fastapi-crud                   | Full CRUD with all HTTP methods               | No        | 2       |
+| 7  | fastapi-sentiment              | Serving an AI model (templates)               | Yes       | 1       |
+| 8  | fastapi-sentiment-separated    | AI model with separated frontend              | Yes       | 2       |
 
 ## Quick Start
 
@@ -48,3 +58,9 @@ uvicorn main:app --reload
 ```
 
 Then open `http://127.0.0.1:8000/docs` to explore the API.
+
+## For AI Examples
+
+```bash
+pip install transformers torch
+```
