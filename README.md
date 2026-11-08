@@ -36,6 +36,10 @@ An AI-powered sentiment analysis app with frontend and backend fully separated. 
 
 Sentiment analysis powered by a separate vLLM model server running Falcon-RW-1B. Three servers working together — frontend, FastAPI backend, and vLLM model server. Covers prompt engineering, output parsing, and the production pattern for serving LLMs.
 
+## Flashcards
+
+[flashcards/](./flashcards) has 40 review cards in 8 topics, from HTTP basics to authentication. Each topic folder holds its cards as images, and [flashcards/print/](./flashcards/print) has one A4 PDF per topic for printing.
+
 ## Learning Path
 
 | #  | Example                        | Key Lesson                                    | AI Model? | Servers |
