@@ -71,10 +71,11 @@ Folder: [`06-app-structure/`](06-app-structure/) · Print: [`print/06-app-struct
 
 | Card | Question |
 | --- | --- |
-| [01-handler-and-router.png](06-app-structure/01-handler-and-router.png) | What is a router, and what is a handler? |
-| [02-routers-folder.png](06-app-structure/02-routers-folder.png) | How does a routers folder let an app grow? |
-| [03-dependencies.png](06-app-structure/03-dependencies.png) | What is a dependency? |
-| [04-depends-chain.png](06-app-structure/04-depends-chain.png) | How does FastAPI read the header, and what does each Depends return? |
+| [01-endpoint-handler-router.png](06-app-structure/01-endpoint-handler-router.png) | What is an endpoint, a handler, and a router? |
+| [02-handler-and-router.png](06-app-structure/02-handler-and-router.png) | What is a router, and what is a handler? |
+| [03-routers-folder.png](06-app-structure/03-routers-folder.png) | How does a routers folder let an app grow? |
+| [04-dependencies.png](06-app-structure/04-dependencies.png) | What is a dependency? |
+| [05-depends-chain.png](06-app-structure/05-depends-chain.png) | How does FastAPI read the header, and what does each Depends return? |
 
 ## Databases
 
