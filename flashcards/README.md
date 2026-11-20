@@ -26,7 +26,8 @@ Folder: [`02-routes-and-parameters/`](02-routes-and-parameters/) · Print: [`pri
 | [01-route-decorator.png](02-routes-and-parameters/01-route-decorator.png) | What turns a Python function into an API endpoint? |
 | [02-path-vs-query.png](02-routes-and-parameters/02-path-vs-query.png) | How do you tell a path parameter from a query parameter? |
 | [03-validating-url-values.png](02-routes-and-parameters/03-validating-url-values.png) | How do you validate values in the URL? |
-| [04-case-insensitive-matching.png](02-routes-and-parameters/04-case-insensitive-matching.png) | How do you compare text and ignore upper and lower case? |
+| [04-request-and-response-models.png](02-routes-and-parameters/04-request-and-response-models.png) | Can a handler take a Pydantic model in and send one back? |
+| [05-case-insensitive-matching.png](02-routes-and-parameters/05-case-insensitive-matching.png) | How do you compare text and ignore upper and lower case? |
 
 ## Validation and models
 
@@ -74,8 +75,9 @@ Folder: [`06-app-structure/`](06-app-structure/) · Print: [`print/06-app-struct
 | [01-endpoint-handler-router.png](06-app-structure/01-endpoint-handler-router.png) | What is an endpoint, a handler, and a router? |
 | [02-handler-and-router.png](06-app-structure/02-handler-and-router.png) | What is a router, and what is a handler? |
 | [03-routers-folder.png](06-app-structure/03-routers-folder.png) | How does a routers folder let an app grow? |
-| [04-dependencies.png](06-app-structure/04-dependencies.png) | What is a dependency? |
-| [05-depends-chain.png](06-app-structure/05-depends-chain.png) | How does FastAPI read the header, and what does each Depends return? |
+| [04-router-vs-api-gateway.png](06-app-structure/04-router-vs-api-gateway.png) | What is the difference between a router and an API gateway? |
+| [05-dependencies.png](06-app-structure/05-dependencies.png) | What is a dependency? |
+| [06-depends-chain.png](06-app-structure/06-depends-chain.png) | How does FastAPI read the header, and what does each Depends return? |
 
 ## Databases
 
@@ -102,6 +104,14 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [07-jwt.png](08-authentication/07-jwt.png) | What is a JWT? |
 | [08-secret-key.png](08-authentication/08-secret-key.png) | What does the secret key do? |
 | [09-jwt-in-the-header.png](08-authentication/09-jwt-in-the-header.png) | Where do later requests send the JWT? |
+
+## LangGraph Server
+
+Folder: [`09-langgraph-server/`](09-langgraph-server/) · Print: [`print/09-langgraph-server.pdf`](print/09-langgraph-server.pdf)
+
+| Card | Question |
+| --- | --- |
+| [01-what-is-langgraph-server.png](09-langgraph-server/01-what-is-langgraph-server.png) | What is LangGraph Server? |
 
 ## Cards that overlap
 
