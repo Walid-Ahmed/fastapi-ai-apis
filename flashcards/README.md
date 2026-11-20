@@ -112,6 +112,7 @@ Folder: [`09-langgraph-server/`](09-langgraph-server/) · Print: [`print/09-lang
 | Card | Question |
 | --- | --- |
 | [01-what-is-langgraph-server.png](09-langgraph-server/01-what-is-langgraph-server.png) | What is LangGraph Server? |
+| [02-runs-wait-stream-background.png](09-langgraph-server/02-runs-wait-stream-background.png) | /runs/wait, /runs/stream, or /runs: which one, and where are they in code? |
 
 ## Cards that overlap
 
