@@ -105,19 +105,6 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [08-secret-key.png](08-authentication/08-secret-key.png) | What does the secret key do? |
 | [09-jwt-in-the-header.png](08-authentication/09-jwt-in-the-header.png) | Where do later requests send the JWT? |
 
-## LangGraph Server
-
-Folder: [`09-langgraph-server/`](09-langgraph-server/) · Print: [`print/09-langgraph-server.pdf`](print/09-langgraph-server.pdf)
-
-| Card | Question |
-| --- | --- |
-| [01-what-is-langgraph-server.png](09-langgraph-server/01-what-is-langgraph-server.png) | What is LangGraph Server? |
-| [02-runs-wait-stream-background.png](09-langgraph-server/02-runs-wait-stream-background.png) | /runs/wait, /runs/stream, or /runs: which one, and where are they in code? |
-| [03-one-node-api-gateway.png](09-langgraph-server/03-one-node-api-gateway.png) | How does a one-node graph act as an API gateway? |
-| [04-handler-calls-another-graph.png](09-langgraph-server/04-handler-calls-another-graph.png) | How does a handler behind the gateway call another graph? |
-| [05-startup-vs-each-request.png](09-langgraph-server/05-startup-vs-each-request.png) | What is ready before the first request, and what is made for each one? |
-| [06-welcome-request-step-by-step.png](09-langgraph-server/06-welcome-request-step-by-step.png) | What happens, step by step, when POST /internal/users/welcome arrives? |
-
 ## Cards that overlap
 
 Two pairs cover nearly the same idea. They are kept for now:
