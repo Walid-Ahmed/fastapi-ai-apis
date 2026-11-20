@@ -2,7 +2,7 @@
 
 Review flashcards for FastAPI, grouped by topic. Read the question at the top, answer it in your head, then check the answer below it.
 
-Each topic folder holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic, one card per page.
+Each topic folder starts with a title page, `00-title.png`, then holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic: the title page, then one card per page.
 
 The code examples come from a books API and a todo API with SQLite, written while studying [FastAPI - The Complete Course](https://github.com/codingwithroby/FastAPI-The-Complete-Course) by Eric Roby.
 
