@@ -38,7 +38,7 @@ Sentiment analysis powered by a separate vLLM model server running Falcon-RW-1B.
 
 ## Flashcards
 
-[flashcards/](./flashcards) has 46 review cards in 9 topics, from HTTP basics to LangGraph Server. Each topic folder holds its cards as images, and [flashcards/print/](./flashcards/print) has one A4 PDF per topic for printing.
+[flashcards/](./flashcards) has 47 review cards in 9 topics, from HTTP basics to LangGraph Server. Each topic folder holds its cards as images, and [flashcards/print/](./flashcards/print) has one A4 PDF per topic for printing.
 
 ## Learning Path
 
