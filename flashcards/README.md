@@ -101,16 +101,17 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [03-login-flow-steps.png](08-authentication/03-login-flow-steps.png) | How does password login with a JWT give access? |
 | [04-login-flow-requests-and-code.png](08-authentication/04-login-flow-requests-and-code.png) | What do the six login steps look like as requests and code? |
 | [05-what-login-sends-back.png](08-authentication/05-what-login-sends-back.png) | What does a successful login send back, and how is it used later? |
-| [06-oauth2-password-flow.png](08-authentication/06-oauth2-password-flow.png) | What is OAuth2, and which part of it does a password login use? |
-| [07-oauth2-password-bearer.png](08-authentication/07-oauth2-password-bearer.png) | What does OAuth2PasswordBearer do on the server? |
-| [08-jwt.png](08-authentication/08-jwt.png) | What is a JWT? |
-| [09-jwt-payload.png](08-authentication/09-jwt-payload.png) | What can the payload of a JWT hold? |
-| [10-secret-key.png](08-authentication/10-secret-key.png) | What does the secret key do? |
-| [11-jwt-in-the-header.png](08-authentication/11-jwt-in-the-header.png) | Where do later requests send the JWT? |
-| [12-token-across-services.png](08-authentication/12-token-across-services.png) | How can one service check a token that another service issued? |
-| [13-role-checks.png](08-authentication/13-role-checks.png) | How does a route check the user's role? |
-| [14-ownership-checks.png](08-authentication/14-ownership-checks.png) | How does a route make sure users touch only their own data? |
-| [15-401-vs-403.png](08-authentication/15-401-vs-403.png) | 401 or 403: which one does the server send? |
+| [06-oauth2-key-card.png](08-authentication/06-oauth2-key-card.png) | What does OAuth2 do, put simply? |
+| [07-oauth2-password-flow.png](08-authentication/07-oauth2-password-flow.png) | What is OAuth2, and which part of it does a password login use? |
+| [08-oauth2-password-bearer.png](08-authentication/08-oauth2-password-bearer.png) | What does OAuth2PasswordBearer do on the server? |
+| [09-jwt.png](08-authentication/09-jwt.png) | What is a JWT? |
+| [10-jwt-payload.png](08-authentication/10-jwt-payload.png) | What can the payload of a JWT hold? |
+| [11-secret-key.png](08-authentication/11-secret-key.png) | What does the secret key do? |
+| [12-jwt-in-the-header.png](08-authentication/12-jwt-in-the-header.png) | Where do later requests send the JWT? |
+| [13-token-across-services.png](08-authentication/13-token-across-services.png) | How can one service check a token that another service issued? |
+| [14-role-checks.png](08-authentication/14-role-checks.png) | How does a route check the user's role? |
+| [15-ownership-checks.png](08-authentication/15-ownership-checks.png) | How does a route make sure users touch only their own data? |
+| [16-401-vs-403.png](08-authentication/16-401-vs-403.png) | 401 or 403: which one does the server send? |
 
 ## Cards that overlap
 
