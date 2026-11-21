@@ -101,13 +101,15 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [03-login-flow-steps.png](08-authentication/03-login-flow-steps.png) | How does password login with a JWT give access? |
 | [04-login-flow-requests-and-code.png](08-authentication/04-login-flow-requests-and-code.png) | What do the six login steps look like as requests and code? |
 | [05-what-login-sends-back.png](08-authentication/05-what-login-sends-back.png) | What does a successful login send back, and how is it used later? |
-| [06-oauth2-password-bearer.png](08-authentication/06-oauth2-password-bearer.png) | What does OAuth2PasswordBearer do on the server? |
-| [07-jwt.png](08-authentication/07-jwt.png) | What is a JWT? |
-| [08-secret-key.png](08-authentication/08-secret-key.png) | What does the secret key do? |
-| [09-jwt-in-the-header.png](08-authentication/09-jwt-in-the-header.png) | Where do later requests send the JWT? |
-| [10-role-checks.png](08-authentication/10-role-checks.png) | How does a route check the user's role? |
-| [11-ownership-checks.png](08-authentication/11-ownership-checks.png) | How does a route make sure users touch only their own data? |
-| [12-401-vs-403.png](08-authentication/12-401-vs-403.png) | 401 or 403: which one does the server send? |
+| [06-oauth2-password-flow.png](08-authentication/06-oauth2-password-flow.png) | What is OAuth2, and which part of it does a password login use? |
+| [07-oauth2-password-bearer.png](08-authentication/07-oauth2-password-bearer.png) | What does OAuth2PasswordBearer do on the server? |
+| [08-jwt.png](08-authentication/08-jwt.png) | What is a JWT? |
+| [09-secret-key.png](08-authentication/09-secret-key.png) | What does the secret key do? |
+| [10-jwt-in-the-header.png](08-authentication/10-jwt-in-the-header.png) | Where do later requests send the JWT? |
+| [11-token-across-services.png](08-authentication/11-token-across-services.png) | How can one service check a token that another service issued? |
+| [12-role-checks.png](08-authentication/12-role-checks.png) | How does a route check the user's role? |
+| [13-ownership-checks.png](08-authentication/13-ownership-checks.png) | How does a route make sure users touch only their own data? |
+| [14-401-vs-403.png](08-authentication/14-401-vs-403.png) | 401 or 403: which one does the server send? |
 
 ## Cards that overlap
 
