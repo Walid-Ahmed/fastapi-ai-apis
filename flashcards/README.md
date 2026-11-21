@@ -27,7 +27,7 @@ Folder: [`02-routes-and-parameters/`](02-routes-and-parameters/) · Print: [`pri
 | [02-path-vs-query.png](02-routes-and-parameters/02-path-vs-query.png) | How do you tell a path parameter from a query parameter? |
 | [03-validating-url-values.png](02-routes-and-parameters/03-validating-url-values.png) | How do you validate values in the URL? |
 | [04-request-and-response-models.png](02-routes-and-parameters/04-request-and-response-models.png) | Can a handler take a Pydantic model in and send one back? |
-| [05-case-insensitive-matching.png](02-routes-and-parameters/05-case-insensitive-matching.png) | How do you compare text and ignore upper and lower case? |
+| [05-path-value-in-handler.png](02-routes-and-parameters/05-path-value-in-handler.png) | What does a path value look like when it reaches your handler? |
 
 ## Validation and models
 
