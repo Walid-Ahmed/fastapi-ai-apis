@@ -104,6 +104,9 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [07-jwt.png](08-authentication/07-jwt.png) | What is a JWT? |
 | [08-secret-key.png](08-authentication/08-secret-key.png) | What does the secret key do? |
 | [09-jwt-in-the-header.png](08-authentication/09-jwt-in-the-header.png) | Where do later requests send the JWT? |
+| [10-role-checks.png](08-authentication/10-role-checks.png) | How does a route check the user's role? |
+| [11-ownership-checks.png](08-authentication/11-ownership-checks.png) | How does a route make sure users touch only their own data? |
+| [12-401-vs-403.png](08-authentication/12-401-vs-403.png) | 401 or 403: which one does the server send? |
 
 ## Cards that overlap
 
