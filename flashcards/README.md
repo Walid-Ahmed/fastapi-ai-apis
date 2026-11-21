@@ -78,6 +78,7 @@ Folder: [`06-app-structure/`](06-app-structure/) · Print: [`print/06-app-struct
 | [04-router-vs-api-gateway.png](06-app-structure/04-router-vs-api-gateway.png) | What is the difference between a router and an API gateway? |
 | [05-dependencies.png](06-app-structure/05-dependencies.png) | What is a dependency? |
 | [06-depends-chain.png](06-app-structure/06-depends-chain.png) | How does FastAPI read the header, and what does each Depends return? |
+| [07-router-prefix.png](06-app-structure/07-router-prefix.png) | How does a router prefix build the full path? |
 
 ## Databases
 
