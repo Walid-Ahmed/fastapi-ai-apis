@@ -38,7 +38,7 @@ Sentiment analysis powered by a separate vLLM model server running Falcon-RW-1B.
 
 ## Flashcards
 
-[flashcards/](./flashcards) has 52 review cards in 8 topics, from HTTP basics to Authentication. Each topic folder holds its cards as images, and [flashcards/print/](./flashcards/print) has one A4 PDF per topic for printing.
+[flashcards/](./flashcards) has 52 review cards in 8 topics, from HTTP basics to Authentication. Each topic folder holds its cards as images, and [flashcards/print/](./flashcards/print) has one A4 PDF per topic, plus `all-topics.pdf` with every card, for printing.
 
 ## Learning Path
 

@@ -4,6 +4,8 @@ Review flashcards for FastAPI, grouped by topic. Read the question at the top, a
 
 Each topic folder starts with a title page, `00-title.png`, then holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic: the title page, then one card per page.
 
+To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 60 pages, with a bookmark at the start of each topic.
+
 The code examples come from a books API and a todo API with SQLite, written while studying [FastAPI - The Complete Course](https://github.com/codingwithroby/FastAPI-The-Complete-Course) by Eric Roby.
 
 ## HTTP basics
