@@ -4,7 +4,7 @@ Review flashcards for FastAPI, grouped by topic. Read the question at the top, a
 
 Each topic folder starts with a title page, `00-title.png`, then holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic: the title page, then one card per page.
 
-To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 78 pages, with a bookmark at the start of each topic.
+To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 79 pages, with a bookmark at the start of each topic.
 
 The code examples come from a books API and a todo API with SQLite, written while studying [FastAPI - The Complete Course](https://github.com/codingwithroby/FastAPI-The-Complete-Course) by Eric Roby.
 
@@ -14,10 +14,11 @@ Folder: [`01-http-basics/`](01-http-basics/) · Print: [`print/01-http-basics.pd
 
 | Card | Question |
 | --- | --- |
-| [01-crud-and-http-methods.png](01-http-basics/01-crud-and-http-methods.png) | How does CRUD map to HTTP methods? |
-| [02-where-data-goes.png](01-http-basics/02-where-data-goes.png) | Where can a client put data in a request? |
-| [03-parts-of-a-request.png](01-http-basics/03-parts-of-a-request.png) | What are the parts of an HTTP request? |
-| [04-status-code-ranges.png](01-http-basics/04-status-code-ranges.png) | What do the HTTP status ranges mean? |
+| [01-request-and-response.png](01-http-basics/01-request-and-response.png) | What happens when a client calls an API? |
+| [02-crud-and-http-methods.png](01-http-basics/02-crud-and-http-methods.png) | How does CRUD map to HTTP methods? |
+| [03-where-data-goes.png](01-http-basics/03-where-data-goes.png) | Where can a client put data in a request? |
+| [04-parts-of-a-request.png](01-http-basics/04-parts-of-a-request.png) | What are the parts of an HTTP request? |
+| [05-status-code-ranges.png](01-http-basics/05-status-code-ranges.png) | What do the HTTP status ranges mean? |
 
 ## Routes and parameters
 
