@@ -4,7 +4,7 @@ Review flashcards for FastAPI, grouped by topic. Read the question at the top, a
 
 Each topic folder starts with a title page, `00-title.png`, then holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic: the title page, then one card per page.
 
-To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 79 pages, with a bookmark at the start of each topic.
+To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 80 pages, with a bookmark at the start of each topic.
 
 The code examples come from a books API and a todo API with SQLite, written while studying [FastAPI - The Complete Course](https://github.com/codingwithroby/FastAPI-The-Complete-Course) by Eric Roby.
 
@@ -44,7 +44,8 @@ Folder: [`03-validation-and-models/`](03-validation-and-models/) · Print: [`pri
 | [04-automatic-422.png](03-validation-and-models/04-automatic-422.png) | Do you have to write the 422 yourself? |
 | [05-before-and-after-validation.png](03-validation-and-models/05-before-and-after-validation.png) | What changes when you add validation to a route? |
 | [06-model-dump.png](03-validation-and-models/06-model-dump.png) | How does model_dump() copy a request model into the stored model? |
-| [07-response-model.png](03-validation-and-models/07-response-model.png) | What does response_model check? |
+| [07-validate-then-process.png](03-validation-and-models/07-validate-then-process.png) | Is model_dump() part of validation? |
+| [08-response-model.png](03-validation-and-models/08-response-model.png) | What does response_model check? |
 
 ## Status codes and errors
 
