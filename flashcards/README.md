@@ -4,7 +4,7 @@ Review flashcards for FastAPI, grouped by topic. Read the question at the top, a
 
 Each topic folder starts with a title page, `00-title.png`, then holds its cards as PNGs, numbered in reading order. `print/` has one A4 landscape PDF per topic: the title page, then one card per page.
 
-To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 60 pages, with a bookmark at the start of each topic.
+To print the whole deck at once, use [`print/all-topics.pdf`](print/all-topics.pdf): every topic in one file, 78 pages, with a bookmark at the start of each topic.
 
 The code examples come from a books API and a todo API with SQLite, written while studying [FastAPI - The Complete Course](https://github.com/codingwithroby/FastAPI-The-Complete-Course) by Eric Roby.
 
@@ -91,6 +91,9 @@ Folder: [`07-databases/`](07-databases/) · Print: [`print/07-databases.pdf`](pr
 | [01-databases-and-sqlalchemy.png](07-databases/01-databases-and-sqlalchemy.png) | SQLite, PostgreSQL, MongoDB, SQLAlchemy. What is each, and what stays the same? |
 | [02-request-to-database-flow.png](07-databases/02-request-to-database-flow.png) | What happens between a client and the database? |
 | [03-who-assigns-ids.png](07-databases/03-who-assigns-ids.png) | Who should assign the id of a new record? |
+| [04-model-columns.png](07-databases/04-model-columns.png) | How does a model class describe a table? |
+| [05-create-read-update-delete.png](07-databases/05-create-read-update-delete.png) | How do you create, read, update, and delete rows with a session? |
+| [06-moving-to-postgresql-or-mysql.png](07-databases/06-moving-to-postgresql-or-mysql.png) | What changes when you move from SQLite to PostgreSQL or MySQL? |
 
 ## Authentication
 
@@ -115,6 +118,39 @@ Folder: [`08-authentication/`](08-authentication/) · Print: [`print/08-authenti
 | [15-role-checks.png](08-authentication/15-role-checks.png) | How does a route check the user's role? |
 | [16-ownership-checks.png](08-authentication/16-ownership-checks.png) | How does a route make sure users touch only their own data? |
 | [17-401-vs-403.png](08-authentication/17-401-vs-403.png) | 401 or 403: which one does the server send? |
+
+## Database migrations
+
+Folder: [`09-database-migrations/`](09-database-migrations/) · Print: [`print/09-database-migrations.pdf`](print/09-database-migrations.pdf)
+
+| Card | Question |
+| --- | --- |
+| [01-why-migrations.png](09-database-migrations/01-why-migrations.png) | Why do you need a database migration? |
+| [02-setting-up-alembic.png](09-database-migrations/02-setting-up-alembic.png) | How do you set up Alembic in a project? |
+| [03-revisions-upgrade-downgrade.png](09-database-migrations/03-revisions-upgrade-downgrade.png) | What is in a migration, and how do you run it? |
+
+## Testing
+
+Folder: [`10-testing/`](10-testing/) · Print: [`print/10-testing.pdf`](print/10-testing.pdf)
+
+| Card | Question |
+| --- | --- |
+| [01-how-pytest-runs-tests.png](10-testing/01-how-pytest-runs-tests.png) | How does pytest find and run your tests? |
+| [02-testclient.png](10-testing/02-testclient.png) | How do you test an endpoint without starting the server? |
+| [03-fixtures.png](10-testing/03-fixtures.png) | What is a pytest fixture? |
+| [04-dependency-overrides.png](10-testing/04-dependency-overrides.png) | How do tests avoid the real database and the real login? |
+
+## Web pages
+
+Folder: [`11-web-pages/`](11-web-pages/) · Print: [`print/11-web-pages.pdf`](print/11-web-pages.pdf)
+
+| Card | Question |
+| --- | --- |
+| [01-html-templates.png](11-web-pages/01-html-templates.png) | How does FastAPI send an HTML page instead of JSON? |
+| [02-shared-layout.png](11-web-pages/02-shared-layout.png) | How do pages share one layout? |
+| [03-static-files.png](11-web-pages/03-static-files.png) | How do you serve CSS and JavaScript files? |
+| [04-staying-logged-in.png](11-web-pages/04-staying-logged-in.png) | How does a web page keep the user logged in? |
+| [05-redirects.png](11-web-pages/05-redirects.png) | What does a redirect do, and when does a page use one? |
 
 ## Cards that overlap
 
