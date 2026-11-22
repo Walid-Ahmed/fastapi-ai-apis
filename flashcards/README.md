@@ -43,7 +43,7 @@ Folder: [`03-validation-and-models/`](03-validation-and-models/) · Print: [`pri
 | [03-field-rules.png](03-validation-and-models/03-field-rules.png) | How do you declare validation rules on a model? |
 | [04-automatic-422.png](03-validation-and-models/04-automatic-422.png) | Do you have to write the 422 yourself? |
 | [05-before-and-after-validation.png](03-validation-and-models/05-before-and-after-validation.png) | What changes when you add validation to a route? |
-| [06-model-dump.png](03-validation-and-models/06-model-dump.png) | How do you build an object from a validated model? |
+| [06-model-dump.png](03-validation-and-models/06-model-dump.png) | How does model_dump() copy a request model into the stored model? |
 | [07-response-model.png](03-validation-and-models/07-response-model.png) | What does response_model check? |
 
 ## Status codes and errors
